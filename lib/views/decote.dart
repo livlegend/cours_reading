@@ -1,5 +1,4 @@
 import 'package:bookshelf_app/views/book_details.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:bookshelf_app/data/data.dart';
 import 'package:bookshelf_app/models/book_model.dart';
@@ -32,9 +31,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset : false,
-      body:SingleChildScrollView(
-        child:  Container(
+      body: Container(
         color: Color(0xffF2F5F9),
         padding: EdgeInsets.symmetric(horizontal: 16),
         child: Container(
@@ -118,7 +115,6 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),
         ),
-      )   
       ),
     );
   }
