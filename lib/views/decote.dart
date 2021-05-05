@@ -58,59 +58,71 @@ class _MyHomePageState extends State<MyHomePage> {
               SizedBox(height: 16,),
               Image.asset("assets/banner.png",fit: BoxFit.fitWidth,),
               SizedBox(height: 30,),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 12),
-                height: 40,
-                child: ListView.builder(
-                    itemCount: categories.length,
-                    shrinkWrap: true,
-                    scrollDirection: Axis.horizontal,
-                    physics: ClampingScrollPhysics(),
-                    itemBuilder: (context, index){
-                      return CategorieTile(
-                        text: categories[index],
-                        isSelected: slectedCategorie == categories[index],
-                      );
-                    }),
-              ),
-              Container(
-                height: 200,
-                child: ListView.builder(
-                    itemCount: books.length,
-                    scrollDirection: Axis.horizontal,
-                    shrinkWrap: true,
-                    physics: ClampingScrollPhysics(),
-                    itemBuilder: (context, index){
-                      return BooksTile(
-                        imgAssetPath: books[index].imgAssetPath,
-                        rating: books[index].rating,
-                        title: books[index].title,
-                        description: books[index].description,
-                        categorie: books[index].categorie,
-                      );
-                    }),
-              ),
-              SizedBox(height: 16,),
-              Text("You may also like", style: TextStyle(
+              Text("Menu", style: TextStyle(
                   color: Colors.black87,
                   fontSize: 18,
                   fontWeight: FontWeight.w500
               ),),
               SizedBox(height: 12,),
               Container(
-                height: 250,
-                child: ListView.builder(
-                    itemCount: singleeBooks.length,
-                    scrollDirection: Axis.horizontal,
-                    shrinkWrap: true,
-                    physics: ClampingScrollPhysics(),
-                    itemBuilder: (context, index){
-                      return SingleBookTile(
-                        title: singleeBooks[index].title,
-                        categorie: singleeBooks[index].categorie,
-                        imgAssetPath: singleeBooks[index].imgAssetPath,
-                      );
-                    }),
+                child: Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Card(
+                            color: Colors.white,
+                            child: Column(
+                              children:<Widget> [
+                                Text('I',
+                                  style:TextStyle(
+                                      fontSize: 50.0,
+                                      color:Colors.teal
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 10.0,
+                                ),
+                                Text('Les cours',
+                                  style:TextStyle(
+                                      fontSize: 20.0,
+                                      color:Colors.grey.shade100
+                                  ),
+                                ),
+                              ],
+                            ),
+                          )
+                      ),
+                    ),
+                    Expanded(
+                      child: Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Card(
+                            color: Colors.white,
+                            child: Column(
+                              children:<Widget> [
+                                Text('I',
+                                  style:TextStyle(
+                                      fontSize: 50.0,
+                                      color:Colors.teal
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 10.0,
+                                ),
+                                Text('Les cours',
+                                  style:TextStyle(
+                                      fontSize: 20.0,
+                                      color:Colors.grey.shade100
+                                  ),
+                                ),
+                              ],
+                            ),
+                          )
+                      ),
+                    ),
+                  ],
+                ),
               )
             ],
           ),
@@ -178,7 +190,7 @@ class BooksTile extends StatelessWidget {
     return GestureDetector(
       onTap: (){
         Navigator.push(context, MaterialPageRoute(
-          builder: (context) => BookDetails()
+            builder: (context) => BookDetails()
         ));
       },
       child: Container(
