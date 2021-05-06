@@ -86,41 +86,51 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               SizedBox(
-                height: 12,
+                height: 8.0,
               ),
               Container(
                 child: Row(
                   children: <Widget>[
                     Expanded(
                       child: Padding(
-                          padding: const EdgeInsets.all(16.0),
+                          padding: const EdgeInsets.all(8.0),
                           child: Card(
                             color: Colors.white,
-                            child: Column(
-                              children: <Widget>[
-                                Text(
-                                  'A',
-                                  style: TextStyle(
-                                      fontSize: 50.0, color: Colors.teal),
-                                ),
-                                SizedBox(
-                                  width: 10.0,
-                                ),
-                                Text(
-                                  'Leçons',
-                                  style: TextStyle(
-                                      fontSize: 20.0, color: Colors.grey),
-                                ),
-                                SizedBox(
-                                  width: 10.0,
-                                ),
-                              ],
+                            elevation: 30.0,
+                            shape: RoundedRectangleBorder(
+                              side: BorderSide(color: Colors.grey.shade50, width: 1),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Container(
+                                width: 350,
+                                height: 150,
+                                child:Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Text(
+                                      'A',
+                                      style: TextStyle(
+                                          fontSize: 50.0, color: Colors.teal),
+                                    ),
+                                    SizedBox(
+                                      height: 20.0,
+                                    ),
+                                    Text(
+                                      'Leçons',
+                                      style: TextStyle(
+                                          fontSize: 20.0, color: Colors.grey),
+                                    ),
+                                    SizedBox(
+                                      width: 10.0,
+                                    ),
+                                  ],
+                                )
                             ),
                           )),
                     ),
                     Expanded(
                       child: Padding(
-                          padding: const EdgeInsets.all(16.0),
+                          padding: const EdgeInsets.all(8.0),
                           child: Card(
                             color: Colors.white,
                             elevation: 30.0,
@@ -129,25 +139,28 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                             child: Container(
                               width: 350,
-                              child: Column(
-                                children: <Widget>[
-                                  Text(
-                                    'B',
-                                    style: TextStyle(
-                                        fontSize: 50.0, color: Colors.teal),
-                                  ),
-                                  SizedBox(
-                                    width: 10.0,
-                                  ),
-                                  Text(
-                                    'Matières',
-                                    style: TextStyle(
-                                        fontSize: 20.0, color: Colors.grey),
-                                  ),
-                                  SizedBox(
-                                    width: 10.0,
-                                  ),
-                                ],
+                              height: 150,
+                              child: Center(
+                                child: Column(
+                                  children: <Widget>[
+                                    Text(
+                                      'B',
+                                      style: TextStyle(
+                                          fontSize: 50.0, color: Colors.teal),
+                                    ),
+                                    SizedBox(
+                                      width: 10.0,
+                                    ),
+                                    Text(
+                                      'Matières',
+                                      style: TextStyle(
+                                          fontSize: 20.0, color: Colors.grey),
+                                    ),
+                                    SizedBox(
+                                      width: 10.0,
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           )),
@@ -163,12 +176,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: <Widget>[
                     Expanded(
                       child: Padding(
-                          padding: const EdgeInsets.all(16.0),
+                          padding: const EdgeInsets.all(8.0),
                           child: Card(
                             color: Colors.white,
                             child: Container(
                               width: 350,
-                              height: 100,
+                              height: 150,
                               child: Column(
                                 children: <Widget>[
                                   Text(
@@ -190,11 +203,12 @@ class _MyHomePageState extends State<MyHomePage> {
                                 ],
                               ),
                             ),
-                          )),
+                          )
+                      ),
                     ),
                     Expanded(
                       child: Padding(
-                          padding: const EdgeInsets.all(16.0),
+                          padding: const EdgeInsets.all(8.0),
                           child: Card(
                             color: Colors.white,
                             child: Column(
