@@ -20,7 +20,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   List<BookModel> books = new List<BookModel>();
   List<SingleBookModel> singleeBooks = new List<SingleBookModel>();
-
+  Color _startColor=Colors.purple;
+  Color _endColor=Colors.purple.shade100;
   @override
   void initState() {
     // TODO: implement initState
@@ -79,19 +80,19 @@ class _MyHomePageState extends State<MyHomePage> {
                   child:Stack(
                     children: <Widget>[
                       Container(
-                        height:150,
+                        height:130,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(24),
                           gradient: LinearGradient(
-                            colors: [Colors.pink, Colors.red],
+                            colors: [_startColor, _endColor],
                             begin: Alignment.topLeft,
                             end:Alignment.bottomRight
                           ),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.red,
-                              blurRadius: 12,
-                              offset: Offset(0,6),
+                              color: Colors.black54,
+                              blurRadius: 12.0,
+                              offset: Offset(0,3),
                             ),
                           ],
                         ),
@@ -101,9 +102,27 @@ class _MyHomePageState extends State<MyHomePage> {
                         bottom: 0,
                         top: 0,
                         child:CustomPaint(
-                          painter: CustomCardShapePainter(24, Colors.pink, Colors.red),
+                          size: Size(90,130),
+                          painter: CustomCardShapePainter(24, _startColor, _endColor),
                         ),
                       ),
+                      Positioned(
+                        left:30.0,
+                        top:50.0,
+                        right:5.0,
+                        child:Container(
+                          width: 80.0,
+                          child: Text(
+                            'Choisir une option',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.normal,
+                                fontFamily: 'NexaRegular',
+                                fontSize: 30
+                            ),
+                          ),
+                        )
+                      )
                     ],
                   )
                 ),
