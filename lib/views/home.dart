@@ -8,6 +8,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'dart:ui' as ui;
 import 'package:bookshelf_app/resource/widgets.dart';
 
+import 'lecons.dart';
+
 String slectedCategorie = "All";
 
 class MyHomePage extends StatefulWidget {
@@ -51,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Row(
                     children: <Widget>[
                       Text(
-                        "Hi John,",
+                        "Hi Kpogara,",
                         style:
                         TextStyle(
                             fontWeight: FontWeight.w500,
@@ -156,31 +158,38 @@ class _MyHomePageState extends State<MyHomePage> {
                                 side: BorderSide(color: Colors.grey.shade50, width: 1),
                                 borderRadius: BorderRadius.circular(10),
                               ),
-                              child: Container(
-                                  width: 350,
-                                  height: 150,
-                                  child:Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
-                                      SizedBox(
-                                        height: 5.0   ,
-                                      ),
-                                      SvgPicture.asset("assets/book_lover.svg",matchTextDirection: false,height: 90.0, width: 200,),
-                                      SizedBox(
-                                        height: 10.0   ,
-                                      ),
-                                      Text(
-                                        'Leçons',
-                                        style: TextStyle(
-                                            fontSize: 20.0,
-                                            fontFamily: 'NexaRegular',
-                                            color: Colors.grey),
-                                      ),
-                                      SizedBox(
-                                        width: 10.0,
-                                      ),
-                                    ],
-                                  )
+                              child: InkWell(
+                                onTap: (){
+                                  Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) => LeconsPage()),
+                                  );
+                                },
+                                child: Container(
+                                    width: 350,
+                                    height: 150,
+                                    child:Column(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: <Widget>[
+                                        SizedBox(
+                                          height: 5.0   ,
+                                        ),
+                                        SvgPicture.asset("assets/book_lover.svg",matchTextDirection: false,height: 90.0, width: 200,),
+                                        SizedBox(
+                                          height: 10.0   ,
+                                        ),
+                                        Text(
+                                          'Leçons',
+                                          style: TextStyle(
+                                              fontSize: 20.0,
+                                              fontFamily: 'NexaRegular',
+                                              color: Colors.grey),
+                                        ),
+                                        SizedBox(
+                                          width: 10.0,
+                                        ),
+                                      ],
+                                    )
+                                ),
                               ),
                             )
                         ),
