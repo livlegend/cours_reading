@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1058608796538",
+    "project_id": "fir-dynamic-link-8162b",
+    "storage_bucket": "fir-dynamic-link-8162b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1058608796538:android:7bc886b12a9672adf8bcc3",
+        "android_client_info": {
+          "package_name": "com.example.bookshelf_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1058608796538-2fgv1lpt7knlo1g99o0606e5gvmbcb36.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4PudIMKVvNeGdENEtVF5Ds_G-lMt5RuY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1058608796538-2fgv1lpt7knlo1g99o0606e5gvmbcb36.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,5 +1,7 @@
+import 'package:bookshelf_app/DynamicLinkService.dart';
 import 'package:bookshelf_app/views/home.dart';
 import 'package:flutter/material.dart';
+import 'package:share/share.dart';
 
 class LeconsPage extends StatefulWidget{
   @override
@@ -9,6 +11,9 @@ class LeconsPage extends StatefulWidget{
 class _MyLeconsPageState extends State<LeconsPage> {
   Color _startColor=Colors.purple;
   Color _endColor=Colors.purple.shade100;
+  //FirebaseApp.initializeApp(Context);
+
+  final DynamicLinkService _dynamicLinkService = DynamicLinkService();
   @override
   Widget build(BuildContext context) {
    return Scaffold(
@@ -122,6 +127,37 @@ class _MyLeconsPageState extends State<LeconsPage> {
                  side: BorderSide(color: Colors.grey.shade50, width: 1),
                  borderRadius: BorderRadius.circular(10),
                ),
+
+               child: FutureBuilder<Uri>(
+                   future: _dynamicLinkService.createDynamicLink(),
+                   builder: (context, snapshot) {
+                     if(snapshot.hasData) {
+                       Uri uri = snapshot.data;
+                       return FlatButton(
+                         color: Colors.amber,
+                         onPressed: () => Share.share(uri.toString()),
+                         child: Text('Share'),
+                       );
+                     } else {
+                       print("no sata");
+                       print(snapshot);
+                       print('aaaaaa');
+                       return Container();
+                     }
+                   }
+               ),
+             ),
+             SizedBox(
+               height: 16,
+             ),
+             Card(
+               color: Colors.white,
+               elevation: 30.0,
+               shape: RoundedRectangleBorder(
+                 side: BorderSide(color: Colors.grey.shade50, width: 1),
+                 borderRadius: BorderRadius.circular(10),
+               ),
+
                child: InkWell(
                  onTap: (){
                    print("Yeaa");
@@ -361,3 +397,5 @@ class _MyLeconsPageState extends State<LeconsPage> {
   }
 
 }
+
+
